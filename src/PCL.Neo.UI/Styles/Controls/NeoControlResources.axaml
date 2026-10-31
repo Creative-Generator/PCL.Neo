@@ -219,8 +219,13 @@
     
     <!-- Button Unchecked -->
     <SolidColorBrush x:Key="NeoRadioButtonButtonBackgroundUncheckedBrush" Color="{DynamicResource NeoControlFillColorDefault}" />
-    <SolidColorBrush x:Key="NeoRadioButtonButtonForegroundUncheckedBrush" Color="{DynamicResource NeoColorGray8}" />
-    <SolidColorBrush x:Key="NeoRadioButtonButtonBorderBrushUncheckedBrush" Color="{DynamicResource NeoColorGray8}" />
+    <SolidColorBrush x:Key="NeoRadioButtonButtonForegroundUncheckedBrush" Color="White" />
+    <SolidColorBrush x:Key="NeoRadioButtonButtonBorderBrushUncheckedBrush" Color="White" />
+    
+    <!-- Button Unchecked PointerOver -->
+    <SolidColorBrush x:Key="NeoRadioButtonButtonBackgroundUncheckedPointerOverBrush" Color="{DynamicResource NeoSystemAccentColorLight6}" />
+    <SolidColorBrush x:Key="NeoRadioButtonButtonForegroundUncheckedPointerOverBrush" Color="White" />
+    <SolidColorBrush x:Key="NeoRadioButtonButtonBorderBrushUncheckedPointerOverBrush" Color="White" />
     
     <!-- [ScrollBar] -->
     <x:Double x:Key="NeoScrollBarSize">16</x:Double>

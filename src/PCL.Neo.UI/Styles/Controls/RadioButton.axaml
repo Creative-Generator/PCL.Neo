@@ -2,13 +2,18 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Design.PreviewWith>
         <Border Padding="20">
-            <StackPanel Spacing="20">
-                <RadioButton Content="Test Unchecked" />
-                <RadioButton Content="Test Checked" IsChecked="True" />
-                <RadioButton Content="Test Disabled" IsEnabled="False" />
-                <RadioButton Content="Test RadioButton text wrap" Width="120" />
-                <RadioButton Content="Test Button RadioButton" Classes="button" />
-            </StackPanel>
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="20">
+                <StackPanel Grid.Column="0" Spacing="20">
+                    <RadioButton Content="Test Unchecked" />
+                    <RadioButton Content="Test Checked" IsChecked="True" />
+                    <RadioButton Content="Test Disabled" IsEnabled="False" />
+                    <RadioButton Content="Test RadioButton text wrap" Width="120" />
+                </StackPanel>
+                
+                <StackPanel Grid.Column="1" Spacing="20" Background="DeepSkyBlue">
+                    <RadioButton Content="Test Button RadioButton" Classes="button" />
+                </StackPanel>
+            </Grid>
         </Border>
     </Design.PreviewWith>
     
