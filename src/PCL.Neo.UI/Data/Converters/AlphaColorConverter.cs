@@ -5,18 +5,34 @@ using Avalonia.Media;
 
 namespace PCL.Neo.UI.Data.Converters;
 
-public class AlphaColorConverter : IValueConverter
+public sealed class AlphaColorConverter(byte alpha) : IValueConverter
 {
-    public static readonly AlphaColorConverter Instance = new();
-    
+    public byte Alpha { get; } = alpha;
+
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (value is Color color && parameter is byte a && targetType.IsAssignableTo(typeof(IBrush)))
+        if (!typeof(IBrush).IsAssignableFrom(targetType))
         {
-            return new SolidColorBrush(new Color(a, color.R, color.G, color.B));
+            return new BindingNotification(
+                new InvalidCastException($"Target type '{targetType}' is not an IBrush."),
+                BindingErrorType.Error);
         }
-        
-        return new BindingNotification(new InvalidCastException(), BindingErrorType.Error);
+
+        var color = value switch
+        {
+            Color c => c,
+            ISolidColorBrush brush => brush.Color,
+            _ => (Color?)null
+        };
+
+        if (color is not { } result)
+        {
+            return new BindingNotification(
+                new InvalidCastException("Value must be a Color or ISolidColorBrush."),
+                BindingErrorType.Error);
+        }
+
+        return new Color(Alpha, result.R, result.G, result.B);
     }
 
     public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)

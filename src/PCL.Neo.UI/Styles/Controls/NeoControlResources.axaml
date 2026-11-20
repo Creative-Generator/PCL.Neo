@@ -1,5 +1,6 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:n="https://github.com/PCL-Community/PCL.Neo">
     <!-- [Button] -->
     <Thickness x:Key="NeoButtonPadding">11,5,11,6</Thickness>
     <Thickness x:Key="NeoButtonBorderThickness">1</Thickness>
@@ -223,7 +224,7 @@
     <SolidColorBrush x:Key="NeoRadioButtonButtonBorderBrushUncheckedBrush" Color="White" />
     
     <!-- Button Unchecked PointerOver -->
-    <SolidColorBrush x:Key="NeoRadioButtonButtonBackgroundUncheckedPointerOverBrush" Color="{DynamicResource NeoSystemAccentColorLight6}" />
+    <SolidColorBrush x:Key="NeoRadioButtonButtonBackgroundUncheckedPointerOverBrush" Color="{n:AlphaColor {DynamicResource NeoSystemAccentColorLight6}, 50}" />
     <SolidColorBrush x:Key="NeoRadioButtonButtonForegroundUncheckedPointerOverBrush" Color="White" />
     <SolidColorBrush x:Key="NeoRadioButtonButtonBorderBrushUncheckedPointerOverBrush" Color="White" />
     

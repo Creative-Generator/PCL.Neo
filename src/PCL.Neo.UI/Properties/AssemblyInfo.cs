@@ -2,6 +2,7 @@ using Avalonia.Metadata;
 
 [assembly: XmlnsDefinition("https://github.com/PCL-Community/PCL.Neo", "PCL.Neo.UI")]
 [assembly: XmlnsDefinition("https://github.com/PCL-Community/PCL.Neo", "PCL.Neo.UI.Controls")]
+[assembly: XmlnsDefinition("https://github.com/PCL-Community/PCL.Neo", "PCL.Neo.UI.Markup")]
 [assembly: XmlnsDefinition("https://github.com/PCL-Community/PCL.Neo", "PCL.Neo.UI.Media")]
 [assembly: XmlnsDefinition("https://github.com/PCL-Community/PCL.Neo", "PCL.Neo.UI.Styles")]
 [assembly: XmlnsDefinition("https://github.com/PCL-Community/PCL.Neo", "PCL.Neo.UI.Styles.Controls.Primitives")]
